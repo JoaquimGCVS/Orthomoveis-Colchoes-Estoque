@@ -1,0 +1,153 @@
+/* Modal de detalhes da compra (igual estoque) */
+#modalDetalhesCompra.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#modalDetalhesCompra .modal__content {
+    background-color: var(--cor-secundaria);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    width: 40%;
+    max-width: 600px;
+    max-height: 92%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
+
+#modalDetalhesCompra .modal__content h2 {
+    text-align: center;
+}
+
+#modalDetalhesCompra .linha {
+    height: 3px;
+    background-color: var(--cor-primaria);
+    width: 100%;
+    margin: 1rem 0;
+}
+
+#modalDetalhesCompra p {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#fecharModalDetalhesCompra,
+#modalDetalhesCompra .modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--cor-terciaria);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#fecharModalDetalhesCompra:hover,
+#modalDetalhesCompra .modal__close:hover {
+    color: var(--cor-primaria);
+}
+
+/* Filtros */
+.relatorio__filtros {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.relatorio__filtros select {
+    width: 30rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.12);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background-color: white;
+    color: #878686;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.relatorio__filtros select:not(:invalid) {
+    color: var(--cor-terciaria);
+}
+
+.relatorio__filtros select option {
+    color: var(--cor-terciaria);
+}
+
+.relatorio__filtros input {
+    padding: 1rem;
+    width: 8rem; 
+    border:none;
+    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.12); 
+    border-radius: var(--border-radius); 
+    font-size: 1rem;
+}
+
+.relatorio__filtros input::placeholder {
+    color: #878686; 
+    font-size: 1rem;
+}
+
+
+
+/* Tabela do relatório */
+#relatorioCompras table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: var(--cor-secundaria);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.12);
+    margin-bottom: 2rem;
+}
+
+#relatorioCompras th, #relatorioCompras td {
+    padding: 0.7rem;
+    text-align: center;
+}
+
+#relatorioCompras th {
+    background: #f5f5f5;
+    color: var(--cor-terciaria);
+    font-weight: bold;
+}
+
+#relatorioCompras td {
+    background: #f5f5f5;
+}
+
+#relatorioCompras button {
+    margin-right: 0.5rem;
+    color: var(--cor-primaria);
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background-color: #f5f5f5;;
+}
+
+#relatorioCompras button:hover {
+    opacity: 0.7;
+}
+

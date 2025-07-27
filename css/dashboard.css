@@ -1,0 +1,154 @@
+.primeira__linha {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.segunda__linha,.terceira__linha {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.12);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+}
+
+.titulo_principal {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.titulo_principal h2, .titulo_principal i {
+    font-size: 1.3rem;
+}
+
+.card .linha3 {
+    margin-bottom: 1.5rem;
+}
+
+.primeira__linha p {
+    font-size: 2rem;
+}
+
+.primeira__linha .card {
+    width: 100%;
+}
+
+.visao__conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.visao_geral {
+    width: 31.5%; 
+}
+
+.card_grafico {
+    padding: 1.5rem;
+    width: 65.8%; 
+}
+
+.card_grafico .grafico__conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_grafico canvas {
+    width: 250px; 
+    height: 250px; 
+    max-width: 50%; 
+    max-height: 100%; 
+}
+
+.grafico__dados {
+    font-size: 1.2rem;
+}
+
+.grafico__dados ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#toggleBairros {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+#toggleBairros:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+/* Modal de Todos os Bairros */
+#modalTodosBairros .modal__content {
+    position: relative;
+}
+
+#modalTodosBairros .modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--cor-terciaria);
+    cursor: pointer;
+    z-index: 1001;
+}
+
+#modalTodosBairros .modal__close:hover {
+    color: var(--cor-primaria);
+}
+
+.terceira__linha, .quarta__linha {
+    margin-bottom: 2rem;
+}
+
+.quarta__linha {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+#exportar_dados, #importar_dados {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 580px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+

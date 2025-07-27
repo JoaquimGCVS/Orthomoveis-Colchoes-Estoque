@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrthomóveisEstoque</title>
+  <link rel="stylesheet" href="../css/cliente.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/estrutura.css" />
+  <link rel="stylesheet" href="../css/modalDetalhes.css" />
+  <link rel="stylesheet" href="../css/modalEditar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <aside class="container__sidebar">
+      <button id="botao__perfil">
+        <img src="../assets/perfil_image.png" alt="botao de perfil">
+      </button>
+      <h2 class="titulo_adm">Administrador</h2>
+      <nav>
+        <ul>
+            <li class="nav__linha"><a href="dashboard.html">Dashboard</a></li>
+            <li class="nav__linha"><a href="cadastro.html">Cadastro</a></li>
+            <li class="nav__linha"><a href="estoque.html">Estoque</a></li>
+            <li class="nav__linha active"><a href="#">Clientes</a></li>
+            <li class="nav__linha"><a href="relatorio.html">Relatório</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar__bottom">
+      <button id="botao__logout">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+      <footer class="footer">
+        <p>© Orthomóveis Colchões</p>
+      </footer>
+    </div>
+    </aside>
+
+    <div class="container__conteudo">
+      <header class="header">
+        <h1>Clientes Cadastrados</h1>
+        <input type="text" id="searchBar" placeholder="Pesquisar por nome ou CPF..." />
+        <img src="../assets/LogoSemFundo.png" alt="logo">
+      </header>
+      <main class="main">
+        <div class="linha3"></div>
+        <div class="cards-container-clientes" id="cardsContainerClientes">
+          <!-- Os cards serão gerados dinamicamente aqui -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal de Detalhes do Cliente -->
+<div class="modal" id="modalDetalhesCliente">
+  <div class="modal__content">
+    <button class="modal__close" id="fecharModalDetalhesCliente">&times;</button>
+    <h2><i class="fas fa-info-circle"></i> Detalhes do Cliente</h2>
+    <div class="linha"></div>
+    <div id="detalhesCliente">
+      <!-- Os detalhes do cliente serão preenchidos dinamicamente -->
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Editar Cliente -->
+<div class="modal" id="modalEditarCliente">
+  <div class="modal__content">
+    <button class="modal__close" id="fecharModalEditarCliente">&times;</button>
+    <h2><i class="fas fa-edit"></i> Editar Cliente</h2>
+    <form id="formEditarCliente" class="form__editar">
+      <div class="linha"></div>
+      <div class="input__linha">
+        <div class="input__group">
+          <h3>Nome:</h3>
+          <input type="text" id="editarNomeCliente" placeholder="Nome" required>
+        </div>
+        <div class="input__group">
+          <h3>CPF:</h3>
+          <input type="text" id="editarCpfCliente" placeholder="CPF" required>
+        </div>
+      </div>
+      <div class="input__linha">
+        <div class="input__group">
+          <h3>Bairro:</h3>
+          <input type="text" id="editarBairroCliente" placeholder="Bairro" required>
+        </div>
+        <div class="input__group">
+          <h3>Rua:</h3>
+          <input type="text" id="editarRuaCliente" placeholder="Rua" required>
+        </div>
+      </div>
+      <div class="input__linha">
+        <div class="input__group">
+          <h3>Número do Domicílio + Complemento:</h3>
+          <input type="text" id="editarComplementoCliente" placeholder="Número, Complemento" required>
+        </div>
+        <div class="input__group">
+          <h3>Telefone:</h3>
+          <input type="text" id="editarTelefoneCliente" placeholder="(31) 98976-2345" required>
+        </div>
+      </div>
+      <button type="submit" class="botao__salvar">Salvar</button>
+    </form>
+  </div>
+</div>
+
+  <script src="../js/cliente.js"></script>
+  <script src="../js/logout.js"></script>
+</body>
+
+</html>

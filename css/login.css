@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body,html {
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+}
+
+.faixas {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.faixa__logo {
+    flex: 0.6;
+    background-color: var(--cor-secundaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faixa__logo img {
+    max-width: 90%;
+}
+
+.faixa__login {
+    flex: 0.4;
+    background-color: var(--cor-primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.form__login h1 {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+
+}
+
+.form__login input, .form__login button{
+  width: 22rem;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border: none;
+  font-size: 1rem;
+}
+
+.form__login input{
+    background-color: var(--cor-secundaria);
+    color: var(--cor-terciaria);
+    outline: none;
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+}
+
+.form__login input::placeholder {
+    text-align: left; 
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+}
+
+button i {
+    font-size: 1.2rem;
+    color: var(--cor-secundaria);
+}
+
+#botao__entrar:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: var(--cor-terciaria); 
+}
+
+#botao__entrar:hover i{
+    color: var(--cor-terciaria); 
+}
+
+.input__group {
+    position: relative;
+    width: 22rem;
+}
+
+.input__group i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--cor-terciaria);
+    font-size: 1.2rem;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrthomóveisEstoque</title>
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link rel="stylesheet" href="../css/modalDetalhes.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/estrutura.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <aside class="container__sidebar">
+      <button id="botao__perfil">
+        <img src="../assets/perfil_image.png" alt="botao de perfil">
+      </button>
+      <h2 class="titulo_adm">Administrador</h2>
+      <nav>
+        <ul>
+            <li class="nav__linha active"><a href="#">Dashboard</a></li>
+            <li class="nav__linha"><a href="cadastro.html">Cadastro</a></li>
+            <li class="nav__linha"><a href="estoque.html">Estoque</a></li>
+            <li class="nav__linha"><a href="cliente.html">Clientes</a></li>
+            <li class="nav__linha"><a href="relatorio.html">Relatório</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar__bottom">
+      <button id="botao__logout">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+      <footer class="footer">
+        <p>© Orthomóveis Colchões</p>
+      </footer>
+    </div>
+    </aside>
+
+    <div class="container__conteudo">
+      <header class="header">
+        <h1>Dashboard</h1>
+        <img src="../assets/LogoSemFundo.png" alt="logo">
+      </header>
+      <main class="main">
+        <div class="linha3"></div>
+        <div class="primeira__linha">
+          <div class="card card_valor_total">
+            <div class="titulo_principal">
+              <i class="fas fa-dollar-sign"></i>
+              <h2>Total</h2>
+            </div>
+            <div class="linha3"></div>
+            <p id="valorTotalEstoque">R$ 0,00</p>
+          </div>
+          <div class="card card_produtos">
+            <div class="titulo_principal">
+              <i class="fas fa-box-open"></i>
+              <h2>Estoque</h2>
+            </div>
+            <div class="linha3"></div>
+            <p id="totalProdutosEstoque">0</p>
+          </div>
+          <div class="card card_encomendas">
+            <div class="titulo_principal">
+              <i class="fas fa-truck"></i>
+              <h2>Encomendas</h2>
+            </div>
+            <div class="linha3"></div>
+            <p id="totalProdutosEncomendados">0</p>
+          </div>
+        </div>
+        <div class="segunda__linha">
+          <div class="card card_grafico">
+            <div class="titulo_principal">
+              <i class="fas fa-chart-pie"></i>
+              <h2>Categorias</h2>
+            </div>
+            <div class="linha3"></div>
+            <div class="grafico__conteudo">
+              <canvas id="graficoCategorias"></canvas>
+              <div class="grafico__dados">
+                <ul id="dadosCategorias">
+                  <!-- Os dados serão preenchidos dinamicamente -->
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card visao_geral">
+            <div class="titulo_principal">
+              <i class="fas fa-eye"></i>
+              <h2>Visão Geral de Produtos</h2>
+            </div>
+            <div class="linha3"></div>
+            <div class="visao__conteudo">
+              <h3>Produto mais Caro:</h3>
+              <p id="produtoMaisCaro">Carregando...</p>
+              <h3>Produto mais Estocado:</h3>
+              <p id="produtoMaisEstocado">Carregando...</p>
+              <h3>Produto mais Encomendado:</h3>
+              <p id="produtoMaisEncomendado">Carregando...</p>
+              <h3>Total de Produtos Cadastrados:</h3>
+              <p id="totalProdutosCadastrados">Carregando...</p>
+            </div>
+          </div>
+        </div>
+        <div class="terceira__linha">
+          <div class="card visao_geral">
+            <div class="titulo_principal">
+              <i class="fas fa-eye"></i>
+              <h2>Visão Geral de Clientes</h2>
+            </div>
+            <div class="linha3"></div>
+            <div class="visao__conteudo">
+              <h3>Cliente Mais Frequente:</h3>
+              <p id="produtoMaisCaro">Carregando...</p>
+              <h3>Cliente com Maior Valor Total Gasto:</h3>
+              <p id="produtoMaisEstocado">Carregando...</p>
+              <h3>Data com Maior Receita:</h3>
+              <p id="produtoMaisEncomendado">Carregando...</p>
+              <h3>Última Venda Realizada:</h3>
+              <p id="totalProdutosCadastrados">Carregando...</p>
+            </div>
+          </div>
+          <div class="card card_grafico">
+            <div class="titulo_principal">
+              <i class="fas fa-chart-pie"></i>
+              <h2>Distribuição de Clientes</h2>
+            </div>
+            <div class="linha3"></div>
+            <div class="grafico__conteudo">
+              <canvas id="graficoClientes"></canvas>
+              <div class="grafico__dados">
+                <ul id="dadosClientes">
+                  <!-- Os dados serão preenchidos dinamicamente -->
+                </ul>
+                <button id="toggleBairros" style="display: none;">
+                  Ver todos os bairros
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="quarta__linha">
+          <button id="exportar_dados"><i class="fas fa-download"></i> Exportar Backup</button>
+          <button id="importar_dados"><i class="fas fa-upload"></i> Importar Backup</button>
+          <input type="file" id="input_importar_backup" accept=".json" style="display:none;">
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal de Todos os Bairros -->
+  <div class="modal" id="modalTodosBairros">
+    <div class="modal__content">
+      <button class="modal__close" id="fecharModalBairros">&times;</button>
+      <h2><i class="fas fa-map-marker-alt"></i> Todos os Bairros</h2>
+      <div class="linha"></div>
+      <div id="listaBairros" class="texto__detalhes">
+        <!-- Os bairros serão preenchidos dinamicamente -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/backup.js"></script>
+  <script src="../js/dashborad.js"></script>
+  <script src="../js/logout.js"></script>
+</body>
+
+</html>

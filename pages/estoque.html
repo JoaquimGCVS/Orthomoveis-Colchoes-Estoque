@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrthomóveisEstoque</title>
+  <link rel="stylesheet" href="../css/estoque.css" />
+  <link rel="stylesheet" href="../css/modalEditar.css" />
+  <link rel="stylesheet" href="../css/modalDetalhes.css" />
+  <link rel="stylesheet" href="../css/modalAtualizar.css">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/estrutura.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <aside class="container__sidebar">
+      <button id="botao__perfil">
+        <img src="../assets/perfil_image.png" alt="botao de perfil">
+      </button>
+      <h2 class="titulo_adm">Administrador</h2>
+      <nav>
+        <ul>
+            <li class="nav__linha"><a href="dashboard.html">Dashboard</a></li>
+            <li class="nav__linha"><a href="cadastro.html">Cadastro</a></li>
+            <li class="nav__linha active"><a href="#">Estoque</a></li>
+            <li class="nav__linha"><a href="cliente.html">Clientes</a></li>
+            <li class="nav__linha"><a href="relatorio.html">Relatório</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar__bottom">
+      <button id="botao__logout">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+      <footer class="footer">
+        <p>© Orthomóveis Colchões</p>
+      </footer>
+    </div>
+    </aside>
+
+    <div class="container__conteudo">
+      <header class="header">
+        <h1>Estoque</h1>
+        <input type="text" id="searchBar" placeholder="Pesquisar por produtos..." />
+        <div class="filtros">
+        <label for="filtroCategoria"></label>
+        <select id="filtroCategoria">
+          <option value="TODAS" selected>Todos</option>
+          <option value="COLCHAO_DE_ESPUMA">Colchão de Espuma</option>
+          <option value="COLCHAO_DE_MOLA">Colchão de Mola</option>
+          <option value="COLCHAO_ORTOPEDICO">Colchão Ortopédico</option>
+          <option value="BOX">Box</option>
+          <option value="TRAVESSEIRO">Travesseiro</option>
+          <option value="ACESSORIO">Acessório</option>
+        </select>
+        </div>
+        <img src="../assets/LogoSemFundo.png" alt="logo">
+      </header>
+      <main class="main">
+        <div class="linha3"></div>
+        <div class="cards-container" id="cardsContainer">
+          <!-- Os cards serão gerados dinamicamente aqui -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal" id="modalEditar">
+    <div class="modal__content">
+        <button class="modal__close" id="fecharModal">&times;</button>
+        <h2><i class="fas fa-edit"></i> Editar Produto</h2>
+        <form id="formEditar" class="form__editar">
+            <div class="linha"></div>
+            <div class="input__linha">
+                <div class="input__group">
+                    <h3>Nome:</h3>
+                    <input type="text" id="editarNome" placeholder="Nome" required>
+                </div>
+                <div class="input__group">
+                    <h3>Categoria:</h3>
+                    <select id="editarCategoria" required>
+                        <option value="" disabled selected>Selecione a Categoria</option>
+                        <option value="COLCHAO_DE_ESPUMA">Colchão de Espuma</option>
+                        <option value="COLCHAO_DE_MOLA">Colchão de Mola</option>
+                        <option value="COLCHAO_ORTOPEDICO">Colchão Ortopédico</option>
+                        <option value="BOX">Box</option>
+                        <option value="TRAVESSEIRO">Travesseiro</option>
+                        <option value="ACESSORIO">Acessório</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input__linha">
+                <div class="input__group">
+                    <h3>Quantidade Estocada:</h3>
+                    <input type="number" id="editarQuantidadeEstocada" placeholder="Quantidade Estocada" required>
+                </div>
+                <div class="input__group">
+                    <h3>Quantidade Encomendada:</h3>
+                    <input type="number" id="editarQuantidadeEncomendada" placeholder="Quantidade Encomendada" required>
+                </div>
+            </div>
+            <div class="input__linha">
+                <div class="input__group">
+                    <h3>Valor Unitário:</h3>
+                    <input type="number" step="0.01" id="editarValorUnitario" placeholder="Valor Unitário" required>
+                </div>
+                <div class="input__group">
+                    <h3>Código:</h3>
+                    <input type="text" id="editarCodigo" placeholder="Código" required>
+                </div>
+            </div>
+            <button type="submit" class="botao__salvar">Salvar</button>
+        </form>
+    </div>
+</div>
+
+  <!-- Modal de Detalhes -->
+  <div class="modal" id="modalDetalhes">
+    <div class="modal__content">
+      <button class="modal__close" id="fecharModalDetalhes">&times;</button>
+      <h2><i class="fas fa-info-circle"></i> Detalhes do Produto</h2>
+      <div class="linha"></div>
+      <div id="detalhesProduto">
+        <!-- Os detalhes do produto serão preenchidos dinamicamente -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Atualizar -->
+<div class="modal" id="modalAtualizar">
+  <div class="modal__content">
+    <button class="modal__close" id="fecharModalAtualizar">&times;</button>
+    <h2><i class="fas fa-sync-alt"></i> Atualizar Estoque</h2>
+    <div class="linha"></div>
+    <div class="modal__atualizar__conteudo">
+      <div class="atualizar__dados">
+        <h3>Encomendados</h3>
+        <p id="quantidadeEncomendados">0</p>
+      </div>
+      <div class="atualizar__dados">
+        <h3>Estoque</h3>
+        <p id="quantidadeEstoque">0</p>
+      </div>
+    </div>
+    <button id="confirmarAtualizacao" class="botao__confirmar">Confirmar</button>
+  </div>
+</div>
+
+  <script src="../js/estoque.js"></script>
+  <script src="../js/modalEditar.js"></script>
+  <script src="../js/modalDetalhes.js"></script>
+  <script src="../js/modalAtualizar.js"></script>
+  <script src="../js/logout.js"></script>
+</body>
+
+</html>

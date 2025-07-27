@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OrthomóveisEstoque</title>
+    <link rel="stylesheet" href="../css/cadastro.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/estrutura.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <aside class="container__sidebar">
+            <button id="botao__perfil">
+                <img src="../assets/perfil_image.png" alt="botao de perfil">
+            </button>
+            <h2 class="titulo_adm">Administrador</h2>
+            <nav>
+                <ul>
+                    <li class="nav__linha"><a href="dashboard.html">Dashboard</a></li>
+                    <li class="nav__linha active"><a href="#">Cadastro</a></li>
+                    <li class="nav__linha"><a href="estoque.html">Estoque</a></li>
+                    <li class="nav__linha"><a href="cliente.html">Clientes</a></li>
+                    <li class="nav__linha"><a href="relatorio.html">Relatório</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar__bottom">
+            <button id="botao__logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+            <footer class="footer">
+                <p>© Orthomóveis Colchões</p>
+            </footer>
+            </div>
+        </aside>
+
+        <div class="container__conteudo">
+            <header class="header">
+                <h1>Cadastro</h1>
+                <label for="tipoCadastro"></label>
+                <div class="filtros">
+                    <select id="tipoCadastro">
+                        <option value="PRODUTO">Produto</option>
+                        <option value="CLIENTE">Cliente</option>
+                        <option value="COMPRA">Venda</option>
+                    </select>
+                </div>    
+                <img src="../assets/LogoSemFundo.png" alt="logo">
+            </header>
+            <main class="main">
+                <div class="linha3"></div>
+                <div class="form__cadastro" id="formCadastro">
+                    <!-- form inserido dinamicamente-->
+                    <button class="botao__adicionar" id="botaoAdicionar"><i class="fa-solid fa-plus"></i>
+                        <p>Adicionar</p>
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="../js/compra.js"></script>
+    <script src="../js/tipoCadastro.js"></script>
+    <script src="../js/cadastro.js"></script>
+    <script src="../js/logout.js"></script>
+</body>
+
+</html>

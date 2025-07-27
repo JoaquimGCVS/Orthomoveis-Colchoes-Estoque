@@ -1,0 +1,116 @@
+.cards-container-clientes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-terciaria);
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.12); 
+}
+
+.card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.card .linha2 {
+    height: 3px;
+    background-color: var(--cor-primaria); 
+    width: 100%; 
+}
+
+.card p {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+}
+
+.botoes__card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botoes__card button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; 
+    font-size: 1rem; 
+    font-weight: 500;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-primaria);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.botoes__card  button:hover {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-secundaria);
+}
+
+#excluir__cliente {
+    display: flex;
+    justify-content: center;
+    padding: 0.4rem 1rem;
+    font-size: 1.2rem; 
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    background-color: var(--cor-primaria); 
+    color: var(--cor-secundaria); 
+    border: none;
+}
+
+#excluir__cliente:hover {
+    opacity: 0.7; 
+}
+
+.loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#excluir__cliente i{
+    font-size: 1rem;
+}
+
+#verDetalhesCliente,
+#editarCliente {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    border: none;
+}
+
+#verDetalhesCliente i,
+#editarCliente i,
+#excluir__cliente i{
+    font-size: 1.2rem; 
+}
+
+#verDetalhesCliente:hover,
+#editarCliente:hover  {
+    opacity: 0.7;
+}
+
+
+
+
+
+

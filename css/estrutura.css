@@ -1,0 +1,201 @@
+html,
+body {
+    height: 100%;
+}
+
+.container {
+    margin-left: 250px; /* Adiciona espaço para o sidebar fixo */
+    display: grid;
+    grid-template-columns: 1fr; /* Ajusta o layout para o conteúdo principal */
+}
+
+.container__sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--cor-primaria); 
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+#botao__perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto 0;
+    width: 6rem;
+    height: 6rem;
+    border: none;
+    background-color: transparent;
+}
+
+#botao__perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para preencher o botão */
+}
+
+.titulo_adm {
+    display: flex;
+    justify-content: center;
+    color: var(--cor-secundaria);
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+}
+
+.nav__linha {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+    color: var(--cor-secundaria); 
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease; 
+    cursor: pointer;
+}
+
+.nav__linha:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+.nav__linha:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.container__sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container__sidebar nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500; 
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1.5rem;
+}
+
+#searchBar {
+    padding: 0.6rem;
+    font-size: 1.2rem;
+    border: none;
+    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.12);
+    border-radius: var(--border-radius);
+    width: 32rem;
+}
+
+#searchBar::placeholder {
+    font-size: 1.2rem; 
+}
+
+.footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--cor-secundaria);
+    border-top: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+.active {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil */
+    color: var(--cor-terciaria); /* Cor de destaque para o texto */
+    font-weight: 600; /* Peso levemente maior para destacar */
+    border-left: 5px solid var(--cor-terciaria); /* Barra lateral discreta */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Transições suaves */
+}
+
+.container__conteudo {
+    display: grid;
+    grid-template-rows: auto 1fr auto; 
+    height: auto; 
+    min-height: 100vh; 
+    background-color: var(--cor-secundaria);
+}
+
+.container__conteudo i {
+    font-size: 1.7rem; 
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem 1rem 2rem;
+    color: var(--cor-terciaria);
+    font-weight: bold;
+    border-radius: var(--border-radius);
+}
+
+.header img {
+    height: 5rem;
+    width: auto;
+}
+
+.linha3 {
+    height: 3px;
+    background-color: var(--cor-primaria); 
+    width: 100%; 
+    margin: 0 0 2rem 0;
+}
+
+.main {
+    padding: 0 2rem;
+    background-color: var(--cor-secundaria);
+    overflow-y: auto;
+}
+
+.sidebar__bottom {
+    margin-top: auto;
+}
+
+.footer {
+    text-align: center;
+}
+
+#botao__logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    background-color: transparent; /* Fundo transparente como o nav__linha */
+    color: var(--cor-secundaria);
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#botao__logout:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo no hover igual ao nav__linha */
+    color: var(--cor-terciaria); /* Cor de destaque no hover */
+}
+
+.filtros {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: inherit;
+}
+
+select option {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}

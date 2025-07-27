@@ -1,0 +1,121 @@
+.form__cadastro button,  .form__cadastro input{
+    padding: 1rem 1.5rem;
+}
+.form__cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.input__linha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.input__group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+
+.title__group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input__group input {
+    width: 30rem; 
+    border: none;
+    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.12); 
+    border-radius: var(--border-radius); 
+    font-size: 1rem;
+}
+
+.input__group input::placeholder {
+    color: #878686; 
+    font-size: 1rem;
+}
+
+.input__group select {
+    width: 30rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.12);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background-color: white;
+    color: #878686; 
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.input__group select:not(:invalid) {
+    color: var(--cor-terciaria);
+}
+
+.input__group select option {
+    color: var(--cor-terciaria);
+}
+
+.form__cadastro button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--cor-primaria); 
+    color: var(--cor-secundaria); 
+    border: none;
+    border-radius: var(--border-radius); 
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 65rem;
+}
+
+.form__cadastro button:hover {
+    background-color: #660024; 
+}
+
+/* Destaca o asterisco dos campos obrigatórios */
+.obrigatorio {
+    color: red;
+    font-weight: bold;
+}
+
+.input__group label {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.filtros {
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+
+#tipoCadastro {
+    padding: 0.6rem;
+    font-size: 1.2rem;
+    border: none;
+    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.12);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+
+
+
+
+

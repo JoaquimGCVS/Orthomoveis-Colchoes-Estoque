@@ -1,0 +1,94 @@
+/* Modal Atualizar */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal__content {
+    background-color: var(--cor-secundaria);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    width: 30%;
+    max-height: 90%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
+
+.modal__content h2 {
+    text-align: center;
+}
+
+.linha {
+    height: 3px;
+    background-color: var(--cor-primaria);
+    width: 100%;
+}
+
+.modal__atualizar__conteudo {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.atualizar__dados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.atualizar__dados h3 {
+    font-size: 1.2rem;
+    color: var(--cor-terciaria);
+}
+
+.atualizar__dados p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-primaria);
+}
+
+.botao__confirmar {
+    align-self: center;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    width: 100%;
+}
+
+.botao__confirmar:hover {
+    background-color: #660024;
+}
+
+.modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--cor-terciaria);
+    cursor: pointer;
+}
+
+.modal__close:hover {
+    color: var(--cor-primaria);
+}
