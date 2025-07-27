@@ -1,11 +1,13 @@
 
-# 🛏️ Site Institucional – Orthomóveis Colchões Orthocrin
+# � Sistema de Gerenciamento de Estoque – Orthomóveis Colchões Orthocrin
 
-Este repositório contém o **site institucional oficial** da loja **Orthomóveis Colchões Orthocrin**, desenvolvido por **Joaquim Vilela** utilizando **HTML, CSS e JavaScript puros**, com estrutura modular de pastas.
+Este repositório contém o **sistema de gerenciamento de estoque** desenvolvido para a **Orthomóveis Colchões Orthocrin**, criado por **Joaquim Vilela** utilizando **HTML, CSS e JavaScript puros**, com estrutura modular de pastas.
 
-O objetivo do projeto é destacar os **produtos da loja**, sua **história**, **tradição desde 1972** e seus **principais diferenciais competitivos**, com foco em **design limpo**, **boa experiência do usuário** e **estrutura leve e funcional**.
+O sistema executa um **CRUD completo** para produtos, clientes e vendas, com persistência de dados via **localStorage**. A aplicação inclui funcionalidades de **importação e exportação de dados em JSON**, facilitando processos de backup, migração e recuperação dos dados, além de sustentar o modelo de armazenamento local.
 
-🔗 Site publicado: [https://orthomoveiscolchoes.com.br/](https://orthomoveiscolchoes.com.br/)
+O projeto conta com um **dashboard dinâmico** que apresenta indicadores-chave de desempenho do estoque e dos produtos, além de **relatórios de vendas interativos** com filtros por múltiplos critérios.
+
+Esta digitalização eliminou tarefas manuais, otimizou processos internos e gerou ganhos concretos em **agilidade, controle e organização**.
 
 > ⚠️ Este projeto foi desenvolvido sob encomenda para uso exclusivo da Orthomóveis Colchões Orthocrin.  
 > O código está disponível apenas para fins de portfólio e demonstração. Não deve ser reutilizado comercialmente.
@@ -16,35 +18,34 @@ O objetivo do projeto é destacar os **produtos da loja**, sua **história**, **
 
 | Pasta / Arquivo | Descrição |
 |-----------------|-----------|
-| `.vscode/`      | Configurações de ambiente do VS Code |
-| `assets/`       | Imagens e outros recursos visuais utilizados no site |
-| `css/`          | Arquivos de estilo (CSS) personalizados |
-| `js/`           | Scripts JavaScript para funcionalidades interativas |
-| `pages/`        | Páginas HTML internas do site |
-| `index.html`    | Página inicial do site |
+| `assets/`       | Imagens e recursos visuais utilizados no sistema |
+| `css/`          | Arquivos de estilo (CSS) para cada módulo do sistema |
+| `js/`           | Scripts JavaScript para funcionalidades e lógica de negócio |
+| `pages/`        | Páginas HTML do sistema (cadastro, estoque, relatórios, etc.) |
+| `index.html`    | Página de login e entrada do sistema |
 
 ---
 
-## ▶️ Como visualizar o site localmente
+## ▶️ Como executar o sistema localmente
 
 ### 🔧 Requisitos
 
 * Navegador moderno (Chrome, Firefox, Edge…)
 * Editor de código (VS Code recomendado)
-* (Opcional) Live Server para atualização automática
+* (Opcional) Live Server para desenvolvimento
 
 ### 📂 Passos
 
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/JoaquimGCVS/Orthomoveis-Colchoes-Estoque.git
    ```
 
 2. Acesse a pasta do projeto:
 
    ```bash
-   cd orthomoveis-site
+   cd Orthomoveis-Colchoes-Estoque
    ```
 
 3. Abra o arquivo `index.html` diretamente no navegador  
@@ -54,12 +55,29 @@ O objetivo do projeto é destacar os **produtos da loja**, sua **história**, **
 
 ## 🧾 Funcionalidades e Destaques
 
-* Modal para exibir **todos os bairros de entrega**
-* Exibição clara de **produtos** e **categorias**
-* Estrutura limpa e **sem dependência de frameworks**
-* Design **responsivo** com HTML + CSS puro
-* Estrutura organizada em múltiplas páginas (pasta `/pages`)
-* Imagens otimizadas e organização modular (`/assets`, `/js`, `/css`)
+### 📋 Gestão Completa
+* **CRUD completo** para produtos, clientes e vendas
+* **Dashboard dinâmico** com indicadores-chave de desempenho
+* **Relatórios interativos** com filtros por múltiplos critérios
+* **Sistema de autenticação** com controle de acesso
+
+### 💾 Persistência e Backup
+* **Armazenamento local** via localStorage
+* **Importação e exportação** de dados em formato JSON
+* **Backup automático** e recuperação de dados
+* **Migração de dados** facilitada
+
+### 🎨 Interface e Experiência
+* **Design responsivo** com HTML + CSS puro
+* **Interface limpa e funcional** com melhorias no layout
+* **Estrutura modular** organizada por funcionalidades
+* **Navegação intuitiva** entre módulos
+
+### ⚡ Benefícios Operacionais
+* **Eliminação de tarefas manuais**
+* **Otimização de processos internos**
+* **Ganhos em agilidade e controle**
+* **Melhor organização** dos dados da empresa
 
 ---
 
@@ -68,4 +86,4 @@ O objetivo do projeto é destacar os **produtos da loja**, sua **história**, **
 **Joaquim Guilherme de Carvalho Vilela Silva**  
 Estudante de Engenharia de Software – PUC Minas  
 GitHub: [@JoaquimGCVS](https://github.com/JoaquimGCVS)  
-Site: [orthomoveiscolchoes.com.br](https://orthomoveiscolchoes.com.br)
+Repositório: [Orthomoveis-Colchoes-Estoque](https://github.com/JoaquimGCVS/Orthomoveis-Colchoes-Estoque)
