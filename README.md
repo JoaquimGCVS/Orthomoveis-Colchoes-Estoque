@@ -1,5 +1,5 @@
 
-# � Sistema de Gerenciamento de Estoque – Orthomóveis Colchões Orthocrin
+# 🛏️ Sistema de Gerenciamento de Estoque – Orthomóveis Colchões Orthocrin
 
 Este repositório contém o **sistema de gerenciamento de estoque** desenvolvido para a **Orthomóveis Colchões Orthocrin**, criado por **Joaquim Vilela** utilizando **HTML, CSS e JavaScript puros**, com estrutura modular de pastas.
 
@@ -50,6 +50,8 @@ Esta digitalização eliminou tarefas manuais, otimizou processos internos e ger
 
 3. Abra o arquivo `index.html` diretamente no navegador  
    ou utilize uma extensão como o **Live Server** no VS Code.
+
+4. Realize o login com as credenciais admin@gmail.com (email) e 123 (senha).
 
 ---
 
