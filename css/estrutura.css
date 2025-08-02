@@ -59,7 +59,7 @@ body {
 }
 
 .nav__linha:last-child {
-    border-bottom: none; /* Remove a linha do último item */
+    border-bottom: none; 
 }
 
 .nav__linha:hover {
@@ -105,11 +105,11 @@ body {
 }
 
 .active {
-    background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil */
-    color: var(--cor-terciaria); /* Cor de destaque para o texto */
-    font-weight: 600; /* Peso levemente maior para destacar */
-    border-left: 5px solid var(--cor-terciaria); /* Barra lateral discreta */
-    transition: background-color 0.2s ease, color 0.2s ease; /* Transições suaves */
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: var(--cor-terciaria); 
+    font-weight: 600; 
+    border-left: 5px solid var(--cor-terciaria); 
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .container__conteudo {

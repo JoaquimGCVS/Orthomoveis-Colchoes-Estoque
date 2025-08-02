@@ -181,18 +181,22 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
         
+        // Total de clientes cadastrados (para cálculo correto das porcentagens)
+        const totalClientesCadastrados = clientes.length;
+        
         // Ordena os bairros por quantidade de clientes (decrescente) e depois alfabeticamente
         const bairrosOrdenados = Object.keys(bairrosMap).sort((a, b) => {
             const diffQuantidade = bairrosMap[b] - bairrosMap[a];
             return diffQuantidade !== 0 ? diffQuantidade : a.localeCompare(b);
         });
         
-        // Determina se deve mostrar apenas os top 5
+        // Determina se deve mostrar apenas os top 5 na legenda lateral
         const mostrarApenasTop5 = bairrosOrdenados.length > 5;
         let bairrosParaExibir = mostrarApenasTop5 ? bairrosOrdenados.slice(0, 5) : bairrosOrdenados;
         
-        const labelsBairros = bairrosParaExibir;
-        const dataBairros = bairrosParaExibir.map(bairro => bairrosMap[bairro]);
+        // Para o gráfico, sempre mostra todos os bairros
+        const labelsBairros = bairrosOrdenados;
+        const dataBairros = bairrosOrdenados.map(bairro => bairrosMap[bairro]);
 
         const ctxClientes = document.getElementById("graficoClientes");
         
@@ -200,10 +204,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const dadosClientesUl = document.getElementById("dadosClientes");
             if (dadosClientesUl) {
                 dadosClientesUl.innerHTML = "";
-                const totalClientes = data.reduce((sum, v) => sum + v, 0);
                 labels.forEach((bairro, index) => {
                     const total = data[index];
-                    const percentage = ((total / totalClientes) * 100).toFixed(2);
+                    const percentage = ((total / totalClientesCadastrados) * 100).toFixed(2);
                     const li = document.createElement("li");
                     li.textContent = `${bairro}: ${total} clientes (${percentage}%)`;
                     dadosClientesUl.appendChild(li);
@@ -229,12 +232,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 options: {
                     responsive: true,
                     plugins: {
-                        legend: { display: true },
+                        legend: { display: false },
                         tooltip: {
                             callbacks: {
                                 label: function (tooltipItem) {
-                                    const total = dataBairros.reduce((sum, value) => sum + value, 0);
-                                    const percentage = ((tooltipItem.raw / total) * 100).toFixed(2);
+                                    const percentage = ((tooltipItem.raw / totalClientesCadastrados) * 100).toFixed(2);
                                     return `${tooltipItem.label}: ${tooltipItem.raw} clientes (${percentage}%)`;
                                 }
                             }
@@ -243,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
             
-            atualizarLegendaBairros(labelsBairros, dataBairros);
+            atualizarLegendaBairros(bairrosParaExibir, bairrosParaExibir.map(bairro => bairrosMap[bairro]));
             
             // Controle do botão para abrir modal com todos os bairros
             const toggleButton = document.getElementById("toggleBairros");
@@ -257,11 +259,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     if (listaBairros) {
                         listaBairros.innerHTML = "";
-                        const totalClientes = Object.values(bairrosMap).reduce((sum, v) => sum + v, 0);
                         
                         bairrosOrdenados.forEach(bairro => {
                             const quantidade = bairrosMap[bairro];
-                            const percentage = ((quantidade / totalClientes) * 100).toFixed(2);
+                            const percentage = ((quantidade / totalClientesCadastrados) * 100).toFixed(2);
                             const p = document.createElement("p");
                             p.textContent = `${bairro}: ${quantidade} clientes (${percentage}%)`;
                             listaBairros.appendChild(p);
@@ -298,7 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Função para formatar a categoria
 const formatarCategoria = (categoria) => {
     const categoriasFormatadas = {
-        "COLCHAO_DE_MOLA": "Colchão de Mola",
+        "COLCHAO_DE_MOLAS": "Colchão de Mola",
         "COLCHAO_DE_ESPUMA": "Colchão de Espuma",
         "COLCHAO_ORTOPEDICO" : "Colchão Ortopédico",
         "TRAVESSEIRO": "Travesseiro",

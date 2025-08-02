@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Exportar backup
     exportarBtn.addEventListener("click", () => {
         // Adicione aqui todas as chaves que deseja exportar
-        const chaves = ["clientes", "produtos"];
+        const chaves = ["clientes", "produtos", "compras"];
         const backup = {};
         chaves.forEach(chave => {
             backup[chave] = JSON.parse(localStorage.getItem(chave) || "[]");
@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Adicione aqui todas as chaves que deseja importar
                 if (backup.clientes) localStorage.setItem("clientes", JSON.stringify(backup.clientes));
                 if (backup.produtos) localStorage.setItem("produtos", JSON.stringify(backup.produtos));
+                if (backup.compras) localStorage.setItem("compras", JSON.stringify(backup.compras));
                 alert("Backup importado com sucesso! Recarregue a página para ver as alterações.");
             } catch (err) {
                 alert("Arquivo de backup inválido.");
