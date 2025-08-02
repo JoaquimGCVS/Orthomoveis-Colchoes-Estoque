@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Exportar backup
     exportarBtn.addEventListener("click", () => {
-        // Adicione aqui todas as chaves que deseja exportar
         const chaves = ["clientes", "produtos", "compras"];
         const backup = {};
         chaves.forEach(chave => {
