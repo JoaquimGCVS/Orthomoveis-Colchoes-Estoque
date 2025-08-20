@@ -1,7 +1,7 @@
 
 # 🛏️ Sistema de Gerenciamento de Estoque – Orthomóveis Colchões Orthocrin
 
-Este repositório contém o **sistema de gerenciamento de estoque** desenvolvido para a **Orthomóveis Colchões Orthocrin**, criado por **Joaquim Vilela** utilizando **HTML, CSS e JavaScript puros**, com estrutura modular de pastas.
+Este repositório contém o **sistema de gerenciamento de estoque** desenvolvido para a **Orthomóveis Colchões Orthocrin**, criado por **Joaquim Vilela** utilizando **HTML, CSS e JavaScript**, com estrutura modular de pastas.
 
 O sistema executa um **CRUD completo** para produtos, clientes e vendas, com persistência de dados via **localStorage**. A aplicação inclui funcionalidades de **importação e exportação de dados em JSON**, facilitando processos de backup, migração e recuperação dos dados, além de sustentar o modelo de armazenamento local.
 
